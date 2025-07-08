@@ -13,7 +13,7 @@ public class Collectible : MonoBehaviour
     public float bobbingSpeed = 2f; // Speed of bobbing motion
 
     private Vector3 startPosition;
-    private float timer; 
+    private float timer;
 
     void Start()
     {
@@ -30,12 +30,6 @@ public class Collectible : MonoBehaviour
         timer += Time.deltaTime * bobbingSpeed;
         float newY = startPosition.y + Mathf.Sin(timer) * bobbingAmount;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
-        
-        // If it's the last piece, go to the end screen
-        if (timer >= 1f)
-        {
-            
-        }
     }
 
     void OnTriggerEnter(Collider other)
